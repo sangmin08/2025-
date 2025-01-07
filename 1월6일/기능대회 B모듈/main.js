@@ -13,71 +13,71 @@ function fetchAndRenderItems() {
 }
 
 function renderItems(items) {
-    const listContainer = document.getElementById('shoppinglist_box');
+    const listContainer = document.getElementById('shoppinglist_box')
     listContainer.innerHTML = ''
 
     items.forEach(item => {
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('item');
+        const itemDiv = document.createElement('div')
+        itemDiv.classList.add('item')
 
         const itemImg = document.createElement('img');
         itemImg.src = item.photo;
+        itemImg.setAttribute('draggable', 'true');
+        itemImg.addEventListener('dragstart', (e) => {
+            console.log('드래그 시작');
+            console.log('드래그된 요소:', e.target);
+            window.dragEvent = e;
+        });
 
         const itemDetails = document.createElement('div');
-        itemDetails.classList.add('item-details');
+        itemDetails.classList.add('item-details')
 
-        const itemName = document.createElement('h4');
-        itemName.textContent = item.product_name;
+        const itemName = document.createElement('h4')
+        itemName.textContent = item.product_name
 
-        const itemBrand = document.createElement('p');
-        itemBrand.textContent = item.brand;
+        const itemBrand = document.createElement('p')
+        itemBrand.textContent = item.brand
 
-        const itemPrice = document.createElement('p');
-        itemPrice.classList.add('item-price');
-        itemPrice.textContent = `${item.price}원`;
+        const itemPrice = document.createElement('p')
+        itemPrice.classList.add('item-price')
+        itemPrice.textContent = `${item.price}원`
 
-        itemDetails.appendChild(itemName);
-        itemDetails.appendChild(itemBrand);
-        itemDetails.appendChild(itemPrice);
-        itemDiv.appendChild(itemImg);
-        itemDiv.appendChild(itemDetails);
+        itemDetails.appendChild(itemName)
+        itemDetails.appendChild(itemBrand)
+        itemDetails.appendChild(itemPrice)
+        itemDiv.appendChild(itemImg)
+        itemDiv.appendChild(itemDetails)
 
-        listContainer.appendChild(itemDiv);
-    });
+        listContainer.appendChild(itemDiv)
+    })
 }
 
-document.addEventListener('DOMContentLoaded', fetchAndRenderItems);
+document.addEventListener('DOMContentLoaded', fetchAndRenderItems)
 
-document.querySelector("#search-input").addEventListener("input", search);
+
+document.querySelector("#search-input").addEventListener("input", search)
 
 function search() {
-    const name = document.querySelector("#search-input").value.trim()
-    const filterData = LIST.filter(item => item.product_name.toLowerCase().includes(name.toLowerCase()));
+    const name = document.querySelector("#search-input").value.trim().toLowerCase()
+    const filterData = LIST.filter(item => item.product_name.toLowerCase().includes(name))
     renderItems(filterData)
 }
 
-const item = document.querySelectorAll(".item > .img")
-const container = document.querySelector(".box2")
+// 드롭 이벤트
+const container = document.querySelector(".box2");
+container.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    // 같은 e 객체를 사용
+    if (window.dragEvent) {
 
-draggables.forEach(item => {
-    item.addEventListener("dragstart", () => {
-        item.classList.add("dragging")
-    })
+    }
+});
 
-    item.addEventListener("dragend", () => {
-        item.classList.remove("dragging")
-    })
-})
-
-containers.forEach(container => {
-    container.addEventListener("dragover", e => {
-        e.preventDefault();
-        const afterElement = getDragAfterElement(container, e.clientX)
-        const draggable = document.querySelector(".dragging")
-        if (afterElement  === undefined) {
-            container.appendChild(draggable)
-        } else {
-            container.insertBefore(draggable, afterElement)
-        }
-    })
-})
+container.addEventListener("drop", (e) => {
+    e.preventDefault();
+    // 같은 e 객체를 사용
+    if (window.dragEvent) {
+        console.log("드래그 요소가 박스에 드롭됨");
+        console.log('드래그된 요소:', window.dragEvent.target);
+    }
+});
