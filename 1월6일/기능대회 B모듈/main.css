@@ -89,21 +89,30 @@
     height: 130px;
 }
 
-
-.num {
-    display: flex;
-    gap: 10px;
-    height: 30px;
-    margin-left: 125px;
-}
-
 #del_btn {
     width: 100px;
-    margin-left: -200px;
     height: 30px;
 }
 
-.buttons {
+.pdt{
     display: flex;
     justify-content: space-between;
+}
+
+.pdt > img {
+    width: 200px;
+    height: 200px;
+}
+
+.pdt_text {
+    text-align: center;
+    font-size: 22px
+}
+
+.del {
+    display: flex;
+    font-size: 20px;
+    width: 130px;
+    height: 30px;
+    margin-top: 170px;
 }
