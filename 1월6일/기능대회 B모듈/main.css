@@ -116,3 +116,7 @@
     height: 30px;
     margin-top: 170px;
 }
+
+.red {
+    display: flex;
+}
