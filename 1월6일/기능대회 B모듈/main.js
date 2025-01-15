@@ -1,6 +1,5 @@
 let LIST = [];
 
-
 function fetchAndRenderItems() {
     fetch('store.json')
         .then(response => response.json())
@@ -57,11 +56,28 @@ document.querySelector("#search-input").addEventListener("input", search);
 
 function search() {
     const name = document.querySelector("#search-input").value.trim().toLowerCase();
-    const filterData = LIST.filter(item => item.product_name.toLowerCase().includes(name));
+    const cho = hanguel(name);
+    const filterData = LIST.filter(item => {
+        const itemNameCho = hanguel(item.product_name.toLowerCase());
+        return itemNameCho.includes(cho);
+    });
     renderItems(filterData);
 }
 
+function hanguel(str) {
+    let cho = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+    let result = [];
+    for (let i in str) {
+        let char = str.substr(i, 1);
+        let index = (char.charCodeAt() - 44032) / 588;
+        result.push(cho[Math.floor(index)] || char);
+    }
+    return result.join('');
+}
+
 const CART = [];
+
+hap = 0;
 
 function draw(data) {
     const list = document.querySelector("#cart");
@@ -80,21 +96,16 @@ function draw(data) {
                 <button class="minus_btn">-</button>
                 <div class="num">${item.num}</div>
                 <button class="plus_btn">+</button>
-                <button class="del_btn">삭제</button>
+                <button class="del_btn" onclick="del(${index})">삭제</button>
             </div>
         </div>
         <hr style="border: 2px solid black;">
         `;
-
-        const PLUSBTN = document.querySelectorAll(".plus_btn")[index];
-        const MINUSBTN = document.querySelectorAll(".minus_btn")[index];
-        const DELBTN = document.querySelectorAll(".del_btn")[index];
-
-        PLUSBTN.addEventListener("click", () => plus(index));
-        MINUSBTN.addEventListener("click", () => minus(index));
-        DELBTN.addEventListener("click", () => del(index));
     });
+    hap += item.price;
 }
+
+const TEXT1 = document.querySelector(".all_price");
 
 const container = document.querySelector(".box2");
 
@@ -110,28 +121,27 @@ container.addEventListener("drop", (e) => {
             dragItemData.num = 1;
             CART.push(dragItemData);
         } else {
-            alert("이미 장바구니에 담긴 상품입니다.")
+            alert("이미 장바구니에 담긴 상품입니다.");
         }
         draw(CART);
     }
 });
 
 function plus(index) {
-    const item = CART[index]
-    item.num += 1
-    draw(CART) 
+    const item = CART[index];
+    item.num += 1;
+    draw(CART);
 }
 
 function minus(index) {
-    const item = CART[index]
+    const item = CART[index];
     if (item.num > 1) {
-        item.num -= 1
+        item.num -= 1;
     }
-    draw(CART)
+    draw(CART);
 }
 
 function del(index) {
-    CART.splice(index, 1)
-    draw(CART)
+    CART.splice(index, 1);
+    draw(CART);
 }
-
