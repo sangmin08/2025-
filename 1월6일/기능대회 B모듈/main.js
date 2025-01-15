@@ -57,27 +57,39 @@ document.querySelector("#search-input").addEventListener("input", search);
 function search() {
     const name = document.querySelector("#search-input").value.trim().toLowerCase();
     const cho = hanguel(name);
-    const filterData = LIST.filter(item => {
-        const itemNameCho = hanguel(item.product_name.toLowerCase());
-        return itemNameCho.includes(cho);
-    });
+    let filterData;
+
+    if (name === cho) {
+        filterData = LIST.filter(item => {
+            const productCho = hanguel(item.product_name.toLowerCase());
+            return productCho.includes(cho);
+        });
+    } else {
+        filterData = LIST.filter(item => item.product_name.toLowerCase().includes(name));
+    }
+
     renderItems(filterData);
 }
 
 function hanguel(str) {
-    let cho = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
-    let result = [];
-    for (let i in str) {
-        let char = str.substr(i, 1);
-        let index = (char.charCodeAt() - 44032) / 588;
-        result.push(cho[Math.floor(index)] || char);
+    const cho = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+    let result = '';
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+        let code = char.charCodeAt(0);
+
+        if (code >= 44032 && code <= 55203) { 
+            const choIndex = Math.floor((code - 44032) / 588);
+            result += cho[choIndex];
+        } else {
+            result += char;
+        }
     }
-    return result.join('');
+    return result;
 }
 
 const CART = [];
-
-hap = 0;
+let hap = 0;
 
 function draw(data) {
     const list = document.querySelector("#cart");
@@ -93,19 +105,16 @@ function draw(data) {
                 <p>${item.price}원</p>
             </div>
             <div class="del">
-                <button class="minus_btn">-</button>
+                <button class="minus_btn" onclick="minus(${index})">-</button>
                 <div class="num">${item.num}</div>
-                <button class="plus_btn">+</button>
+                <button class="plus_btn" onclick="plus(${index})">+</button>
                 <button class="del_btn" onclick="del(${index})">삭제</button>
             </div>
         </div>
         <hr style="border: 2px solid black;">
         `;
     });
-    hap += item.price;
 }
-
-const TEXT1 = document.querySelector(".all_price");
 
 const container = document.querySelector(".box2");
 
