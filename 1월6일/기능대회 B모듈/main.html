@@ -33,10 +33,10 @@
                         <div class="buylist">
                             <div id="buy" class="box1">
                                 <div class="red">
-                                    <h2>총 합계:<h2 class="all_price">0<h2></h2>
+                                    <h2>총 합계:<h2 class="all_price"><h2>원</h2>
                                 </div>
                         </div>
-                        <button id="buyButton">구매하기</button>
+                        <input id="buyButton" type="button" value="구매하기" onclick="showPopup();" />
                     </div>
                 </div>
             </div>
@@ -44,6 +44,16 @@
     </div>
     
     <script src="./main.js"></script>
-    
 </body>
+</html>
+<html>
+    <head>
+        <title>Document</title>
+        <script language="javascript">
+        function showPopup() { window.open("08_2_popup.html", "a", "width=600, height=600, right=700, top=-200"); }
+        </script>
+    </head>
+    <body>
+        <h1>POPUP !!</h1>
+    </body>
 </html>
