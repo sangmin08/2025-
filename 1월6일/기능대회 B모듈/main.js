@@ -31,14 +31,14 @@ function renderItems(items) {
         itemDetails.classList.add('item-details');
 
         const itemName = document.createElement('h4');
-        itemName.textContent = item.product_name;
+        itemName.innerHTML = highlight(item.product_name)
 
         const itemBrand = document.createElement('p');
         itemBrand.textContent = item.brand;
 
         const itemPrice = document.createElement('p');
         itemPrice.classList.add('item-price');
-        itemPrice.textContent = `${item.price}원`;
+        itemPrice.textContent = `${item.price}원`
 
         itemDetails.appendChild(itemName);
         itemDetails.appendChild(itemBrand);
@@ -58,7 +58,7 @@ function search() {
     const name = document.querySelector("#search-input").value.trim().toLowerCase();
     const cho = hanguel(name);
     let filterData;
-
+    
     if (name === cho) {
         filterData = LIST.filter(item => {
             const productCho = hanguel(item.product_name.toLowerCase());
@@ -67,8 +67,14 @@ function search() {
     } else {
         filterData = LIST.filter(item => item.product_name.toLowerCase().includes(name));
     }
-
+    
     renderItems(filterData);
+}
+
+function highlight(text) {
+    const search1 = document.querySelector("#search-input").value.toLowerCase();
+    const regex = new RegExp(`(${search1})`, 'gi'); 
+    return text.replace(regex, '<span class="highlight">$1</span>');
 }
 
 function hanguel(str) {
@@ -94,27 +100,40 @@ let hap = 0;
 function draw(data) {
     const list = document.querySelector("#cart");
     list.innerHTML = '';
+    hap = 0;
 
     data.forEach((item, index) => {
+        const price = parseInt(item.price.replace(/[^0-9]/g, ""))
+        const num = parseInt(item.num)
+
         list.innerHTML += `
         <div class="pdt">
             <img src="${item.photo}"/>
             <div class="pdt_text">
                 <h4>${item.product_name}</h4>
                 <p>${item.brand}</p>
-                <p>${item.price}원</p>
+                <p>${price.toLocaleString()}원</p>
             </div>
             <div class="del">
                 <button class="minus_btn" onclick="minus(${index})">-</button>
-                <div class="num">${item.num}</div>
+                <div class="num">${num}</div>
                 <button class="plus_btn" onclick="plus(${index})">+</button>
                 <button class="del_btn" onclick="del(${index})">삭제</button>
             </div>
         </div>
         <hr style="border: 2px solid black;">
         `;
+
+        hap += price * num; 
     });
+
+    const allPrice = document.querySelector(".all_price");
+    if (allPrice) {
+        allPrice.textContent = `${hap.toLocaleString()}`;
+    }
 }
+
+
 
 const container = document.querySelector(".box2");
 
@@ -154,3 +173,4 @@ function del(index) {
     CART.splice(index, 1);
     draw(CART);
 }
+
