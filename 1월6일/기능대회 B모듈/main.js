@@ -96,6 +96,7 @@ function hanguel(str) {
 
 let CART = [];
 let hap = 0;
+let itemN = []
 
 const list = document.querySelector("#cart");
 const allPrice = document.querySelector(".all_price");
@@ -126,16 +127,13 @@ function draw(data) {
         <hr style="border: 2px solid black;">
         `;
 
-        hap += price * num; 
+        hap += price * num;
     });
-
+    
     if (allPrice) {
         allPrice.textContent = `${hap.toLocaleString()}`;
     }
 }
-
-
-
 
 
 const container = document.querySelector(".box2");
@@ -182,6 +180,9 @@ const modal = document.getElementById("modalWrap")
 const closeBtn = document.getElementById("closeBtn")
 const buycheckbtn = document.getElementById("buycheckButton")
 
+const modal2 = document.getElementById("receipt")
+const modal2bd = document.getElementById("receipt_bd")
+
 buybtn.onclick = function () {
     if (CART.length === 0){
         alert("장바구니가 비어있습니다")
@@ -191,7 +192,7 @@ buybtn.onclick = function () {
 }
 
 closeBtn.onclick = function () {
-    modal.style.display = "none"; // 모달을 닫는 버튼(X)을 클릭하면 모달을 숨김
+    modal.style.display = "none"; 
 };
 
 buycheckbtn.onclick = function () {
@@ -206,11 +207,51 @@ buycheckbtn.onclick = function () {
         return
     }
 
+    let totalAmount = 0;
+
+    let itemsDetails = '';
+    var today = new Date();
+
+    var year = today.getFullYear();
+    var month = ('0' + (today.getMonth() + 1)).slice(-2);
+    var day = ('0' + today.getDate()).slice(-2);
+
+    var hours = ('0' + today.getHours()).slice(-2); 
+    var minutes = ('0' + today.getMinutes()).slice(-2);
+    var seconds = ('0' + today.getSeconds()).slice(-2);
+
+    var TIME = year + '년 ' + month  + '월 ' + day + '일 '+ hours + '시 ' + minutes + '분 ' + seconds + '초 '
+
+    CART.forEach(item => {
+        const price = parseInt(item.price.replace(/[^0-9]/g, ""));
+        const totalPrice = price * item.num;
+        totalAmount += totalPrice;
+
+        itemsDetails += `
+            <p>상품명: ${item.product_name}</p>
+            <p>가격: ${price.toLocaleString()}원</p>
+            <p>수량: ${item.num}</p>
+            <p>합계: ${totalPrice.toLocaleString()}원</p>
+            <hr />
+        `;
+    });
+
+    modal2bd.innerHTML = `
+        <h1>구매내역</h1>
+        ${itemsDetails}
+        <p>총합계: ${totalAmount.toLocaleString()}원</p>
+        <p>구매일시: ${TIME}<p>
+    `;
+
     modal.style.display = "none"
-    alert("이름 : " + username + "\n배송지 : " + useraddress + "\n\n구매해주셔서 감사합니다!")
     list.innerHTML = ''
     CART = []
     allPrice.textContent = ''
     
-    
+    modal2.style.display = "block"
+    window.onclick = function (event) {
+        if (event.target == modal2) {
+          modal2.style.display = "none"
+        }
+    };
 }
