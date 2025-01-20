@@ -94,11 +94,13 @@ function hanguel(str) {
     return result;
 }
 
-const CART = [];
+let CART = [];
 let hap = 0;
 
+const list = document.querySelector("#cart");
+const allPrice = document.querySelector(".all_price");
+
 function draw(data) {
-    const list = document.querySelector("#cart");
     list.innerHTML = '';
     hap = 0;
 
@@ -127,11 +129,12 @@ function draw(data) {
         hap += price * num; 
     });
 
-    const allPrice = document.querySelector(".all_price");
     if (allPrice) {
         allPrice.textContent = `${hap.toLocaleString()}`;
     }
 }
+
+
 
 
 
@@ -174,3 +177,40 @@ function del(index) {
     draw(CART);
 }
 
+const buybtn = document.getElementById("buyButton")
+const modal = document.getElementById("modalWrap")
+const closeBtn = document.getElementById("closeBtn")
+const buycheckbtn = document.getElementById("buycheckButton")
+
+buybtn.onclick = function () {
+    if (CART.length === 0){
+        alert("장바구니가 비어있습니다")
+    } else {
+        modal.style.display = "block"
+    }
+}
+
+closeBtn.onclick = function () {
+    modal.style.display = "none"; // 모달을 닫는 버튼(X)을 클릭하면 모달을 숨김
+};
+
+buycheckbtn.onclick = function () {
+    const username = document.querySelector("#user_name").value
+    const useraddress = document.querySelector("#user_address").value
+    if (username == ""){
+        alert("이름을 입력하세요")
+        return
+    }
+    if (useraddress == ""){
+        alert("주소를 입력하세요")
+        return
+    }
+
+    modal.style.display = "none"
+    alert("이름 : " + username + "\n배송지 : " + useraddress + "\n\n구매해주셔서 감사합니다!")
+    list.innerHTML = ''
+    CART = []
+    allPrice.textContent = ''
+    
+    
+}
