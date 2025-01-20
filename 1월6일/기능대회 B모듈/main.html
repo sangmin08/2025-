@@ -36,24 +36,33 @@
                                     <h2>총 합계:<h2 class="all_price"><h2>원</h2>
                                 </div>
                         </div>
-                        <input id="buyButton" type="button" value="구매하기" onclick="showPopup();" />
+                        <button id="buyButton">구매하기</button>
+
+                        <div id="modalWrap"> <!-- 모달 창을 감싸는 div -->
+                            <div id="modalBody">
+                              <span id="closeBtn">&times;</span>
+                              <div class="bbb">
+                                <input type="nametxt" id="user_name" placeholder="이름을 입력하세요"/>
+                                <br>
+                                <br>
+                                <input type="addresstxt" id="user_address" placeholder="주소를 입력하세요"/>
+                                <br>
+                                <br>
+                                <button id="buycheckButton">구매완료</button>
+                              </div>
+                            </div>
+                        </div>
+                        <div id="receipt">
+                            <p>구매완료</p>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
+    
     <script src="./main.js"></script>
 </body>
-</html>
-<html>
-    <head>
-        <title>Document</title>
-        <script language="javascript">
-        function showPopup() { window.open("08_2_popup.html", "a", "width=600, height=600, right=700, top=-200"); }
-        </script>
-    </head>
-    <body>
-        <h1>POPUP !!</h1>
-    </body>
 </html>
