@@ -11,13 +11,13 @@ function fetchAndRenderItems() {
             console.error('Error loading JSON:', error);
         });
 }
+let listContainer = document.getElementById('shoppinglist_box')
 
 function renderItems(items) {
-    const listContainer = document.getElementById('shoppinglist_box');
     listContainer.innerHTML = '';
 
     items.forEach(item => {
-        const itemDiv = document.createElement('div');
+        let itemDiv = document.createElement('div');
         itemDiv.classList.add('item');
 
         const itemImg = document.createElement('img');
@@ -57,23 +57,32 @@ document.querySelector("#search-input").addEventListener("input", search);
 function search() {
     const name = document.querySelector("#search-input").value.trim().toLowerCase();
     const cho = hanguel(name);
-    let filterData;
+
+    let filterData
     
     if (name === cho) {
         filterData = LIST.filter(item => {
             const productCho = hanguel(item.product_name.toLowerCase());
             return productCho.includes(cho);
         });
+        renderItems(filterData);
     } else {
-        filterData = LIST.filter(item => item.product_name.toLowerCase().includes(name));
+        filterData = LIST.filter(item => item.product_name.toLowerCase().includes(name))
+        if (filterData.length === 0) {
+            listContainer.innerHTML = `
+            <p>일치하는 상품이 없습니다</p>
+            `
+        } else {
+            renderItems(filterData);
+        }
     }
+
     
-    renderItems(filterData);
 }
 
 function highlight(text) {
     const search1 = document.querySelector("#search-input").value.toLowerCase();
-    const regex = new RegExp(`(${search1})`, 'gi'); 
+    const regex = new RegExp(`(${search1})`, 'gi');
     return text.replace(regex, '<span class="highlight">$1</span>');
 }
 
@@ -96,7 +105,6 @@ function hanguel(str) {
 
 let CART = [];
 let hap = 0;
-let itemN = []
 
 const list = document.querySelector("#cart");
 const allPrice = document.querySelector(".all_price");
@@ -106,8 +114,9 @@ function draw(data) {
     hap = 0;
 
     data.forEach((item, index) => {
-        const price = parseInt(item.price.replace(/[^0-9]/g, ""))
+        const price = parseFloat(item.price.replace(/[^0-9]/g, ""))
         const num = parseInt(item.num)
+        const prnum = price*num
 
         list.innerHTML += `
         <div class="pdt">
@@ -116,6 +125,7 @@ function draw(data) {
                 <h4>${item.product_name}</h4>
                 <p>${item.brand}</p>
                 <p>${price.toLocaleString()}원</p>
+                <P>합계 : ${prnum.toLocaleString()}원</p>
             </div>
             <div class="del">
                 <button class="minus_btn" onclick="minus(${index})">-</button>
