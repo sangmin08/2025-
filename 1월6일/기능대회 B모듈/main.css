@@ -106,7 +106,12 @@
 
 .pdt_text {
     text-align: center;
-    font-size: 22px
+    margin-top: -15px;
+    font-size: 20px
+}
+
+.pdt_text > p {
+    margin-top: -2px
 }
 
 .del {
