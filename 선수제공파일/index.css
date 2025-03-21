@@ -1,0 +1,149 @@
+.container {
+    width: 1600px;
+    margin: auto;
+}
+
+header {
+    display: flex;
+    background-color: #C1D6F6;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#logo {
+    width: 338px;
+    height: 63px;
+}
+
+.nav {
+    display: flex;
+    gap: 80px;
+}
+
+.login {
+    display: flex;
+    gap: 40px;
+}
+
+input{
+    display: none;
+}
+
+#visual {
+    position: relative;
+    width: 100%;
+    height: 750px;
+    background-color: gray;
+    overflow: hidden;
+    margin: auto;
+
+}
+
+#visual:hover .slides {
+    animation-play-state: paused;
+}
+
+.slides {
+    position: absolute;
+    width: 400%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    display: none;
+    animation-name: visual;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+}
+
+.slide {
+    width: 25%;
+    height: 750px;
+    background-size: cover;
+}
+
+#slide3:checked ~ .buttons > .button:nth-child(3),
+#slide2:checked ~ .buttons > .button:nth-child(2),
+#slide1:checked ~ .buttons > .button:nth-child(1),
+#slide3:checked ~ #visual > .slides:nth-child(3),
+#slide2:checked ~ #visual > .slides:nth-child(2),
+#slide1:checked ~ #visual > .slides:nth-child(1) {
+    display: flex;
+}
+
+@keyframes  visual {
+    0% {
+        left: 0;
+    } 30% {
+        left: 0%;
+    } 33% {
+        left: -100%;
+    } 63% {
+        left: -100%;
+    } 66% {
+        left: -200%;
+    } 96% {
+        left: -200%;
+    } 100% {
+        left: -300%;
+    }
+}
+
+.buttons {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.button {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 100px;
+    display: none;
+    z-index: 1;
+}
+
+.button label {
+    cursor: pointer;
+}
+
+.slide1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/공통/images/11.JPG);
+}
+
+.slide2 {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/공통/images/09.JPG);
+}
+
+.slide3 {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/공통/images/28.JPG);
+}
+
+
+.products > h1 {
+    color: #4387DD;
+    font-size: 80px;
+    text-align: center;
+}
+
+.circles {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product {
+    width: 100px;
+    height: 100px;
+}
+
+.radiotxt {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
