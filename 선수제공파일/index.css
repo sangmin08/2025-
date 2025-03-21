@@ -1,6 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .container {
-    width: 1600px;
-    margin: auto;
+    margin: auto
 }
 
 header {
@@ -8,7 +13,8 @@ header {
     background-color: #C1D6F6;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+
 }
 
 #logo {
@@ -26,14 +32,14 @@ header {
     gap: 40px;
 }
 
-input{
+#slide1 , #slide2 , #slide3 {
     display: none;
 }
 
 #visual {
     position: relative;
     width: 100%;
-    height: 750px;
+    height: 800px;
     background-color: gray;
     overflow: hidden;
     margin: auto;
@@ -59,8 +65,19 @@ input{
 
 .slide {
     width: 25%;
-    height: 750px;
+    height: 800px;
     background-size: cover;
+}
+
+.slide_text {
+    color: white;
+    margin-left: 200px;
+    margin-top: 200px;
+    font-size: 30px;
+}
+
+.slide_text > h1 {
+    font-size: 100px;
 }
 
 #slide3:checked ~ .buttons > .button:nth-child(3),
@@ -91,21 +108,22 @@ input{
 }
 
 .buttons {
-    width: 80%;
-    margin: auto;
-    position: relative;
+    margin-bottom: 100px;
 }
 
 .button {
+    
     width: 100%;
     position: absolute;
     top: 0px;
     left: 0px;
     display: flex;
+    justify-content: center;
     justify-content: space-between;
-    font-size: 100px;
+    font-size: 140px;
     display: none;
-    z-index: 1;
+    color: white;
+    margin-top: 17%;
 }
 
 .button label {
@@ -141,9 +159,29 @@ input{
     height: 100px;
 }
 
+.radiotxt > input {
+    position: absolute;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.radiotxt > label { 
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-left: 4px;
+    margin-top: 2px;
+    font-weight: bolder;
+    border: 4px solid #4387DD;
+    line-height: 95px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #4387DD;
+}
+
 .radiotxt {
-    display: flex;
-    justify-content: center;
-    height: 100%;
+   margin-left: -50px;
 }
 
