@@ -189,3 +189,9 @@ header {
     background-color: #4387DD;
     color: white;
 }
+
+
+.productDom {
+    display: flex;
+    margin-top: 10rem;
+}
