@@ -185,3 +185,7 @@ header {
    margin-left: -50px;
 }
 
+.radiotxt > input:checked ~ label{
+    background-color: #4387DD;
+    color: white;
+}
