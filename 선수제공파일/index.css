@@ -190,8 +190,11 @@ header {
     color: white;
 }
 
+.radiotxt > input:checked ~ div {
+    display: none   ;
+}
 
 .productDom {
-    display: flex;
+    position: absolute;
     margin-top: 10rem;
 }
