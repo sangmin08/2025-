@@ -1,0 +1,124 @@
+/* css/style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#container {
+    width: 1800px;
+    height: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+#background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/나눔혁신.jpg);
+    z-index: 99;
+    opacity: 0; /* 초기 투명도 설정 */
+    transition: opacity 0.5s ease-in-out;
+}
+#background-container.fade-in {
+    opacity: 1;
+}
+#container #split-container {
+    position: absolute;
+    top: 0;
+    left: 0;;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+}
+#container #split-container .split-area {
+    background-size: cover;
+    flex: 1;
+    height: 700px;
+    background-position: center;
+    transition: opacity 0.5s ease-in-out;
+    position: relative;
+}
+#container #split-container .split-area::before {
+    content: "";
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+#container #split-container .split-area-1::before { background-image: url(../img/나눔혁신.jpg); }
+#container #split-container .split-area-2::before { background-image: url(../img/미래혁신.jpg); }
+#container #split-container .split-area-3::before { background-image: url(../img/보안혁신.jpg); }
+#container #split-container .split-area-4::before { background-image: url(../img/신뢰혁신.jpg); }
+#container #split-container .split-area-5::before { background-image: url(../img/환경혁신.jpg); }
+
+#container #split-container .split-area.fade-out::before { opacity: 0; }
+
+#container #split-container .split-area span.title {
+    display: block;
+    position: absolute;
+    left: 30px;
+    bottom: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+#container #split-container .split-area span.title.hide {
+    display: none;
+}
+#container #split-container .split-area span.arrow {
+    display: block;
+    position: absolute;
+    right: 30px;
+    bottom: 60px;
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    display: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+#container #split-container .split-area span.arrow.show {
+    display: block;
+}
+#container #split-container .split-gap {
+    background-color: white;
+    width: 15px;
+    height: 700px;
+}
+.motos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px 0 20px;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.motos div {
+    display: none;
+}
+.motos div.active {
+    display: block;
+}

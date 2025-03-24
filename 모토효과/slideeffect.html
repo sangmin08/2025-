@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>이미지 분할 및 호버 효과</title>
+  <style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 800px; /* 전체 컨테이너 너비 설정 */
+  display: flex;
+  position: relative;
+  overflow: hidden; /* 이미지가 컨테이너 밖으로 나가지 않도록 */
+}
+
+.original-image {
+  display: none; /* 원본 이미지는 숨김 */
+}
+
+.split-container {
+  display: flex;
+  width: 100%;
+  height: 300px; /* 분할된 영역들의 높이 설정 */
+  gap: 10px; /* 영역 사이 간격 설정 */
+  position: relative; /* 배경 이미지 배치를 위해 추가 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.3s ease;
+}
+
+.split-area {
+  flex: 1; /* 각 영역이 동일한 비율로 공간을 차지 */
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  z-index: 1; /* 기본적으로 영역은 배경 위에 표시되도록 */
+  background-color: #ccc;
+}
+
+.split-area.expanded {
+    z-index: 2;
+}
+
+/* 이미지 1번을 기본으로 보여준다. */
+.split-container[data-image="1"] {
+    background-image: url('../img/나눔혁신.jpg');
+}
+
+.split-container[data-image="2"] {
+    background-image: url('../img/미래혁신.jpg');
+}
+
+.split-container[data-image="3"] {
+    background-image: url('../img/보안혁신.jpg');
+}
+
+.split-container[data-image="4"] {
+    background-image: url('../img/신뢰혁신.jpg');
+}
+
+.split-container[data-image="5"] {
+    background-image: url('../img/환경혁신.jpg');
+}
+
+.split-area.expanded{
+    background-color: transparent;
+}    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="img/나눔혁신.jpg" alt="원본 이미지" class="original-image">
+    <div class="split-container">
+      <div class="split-area" data-area="1"></div>
+      <div class="split-area" data-area="2"></div>
+      <div class="split-area" data-area="3"></div>
+      <div class="split-area" data-area="4"></div>
+      <div class="split-area" data-area="5"></div>
+    </div>
+  </div>
+  <script>
+    const splitAreas = document.querySelectorAll('.split-area');
+    const splitContainer = document.querySelector('.split-container');
+    let expandedArea = null;
+    let expandedNum = 0;
+    splitAreas.forEach(area => {
+        area.addEventListener('mouseover', () => {
+            if (expandedArea) {
+                expandedArea.classList.remove('expanded');
+            }
+
+            area.classList.add('expanded');
+            expandedArea = area;
+        });
+        
+        splitContainer.addEventListener('mouseleave', () => {
+            if (expandedArea) {
+                expandedArea.classList.remove('expanded');
+            }
+        })
+    });
+
+  </script>
+</body>
+</html>
