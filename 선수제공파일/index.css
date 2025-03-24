@@ -14,7 +14,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 }
 
 #logo {
@@ -182,19 +184,39 @@ header {
 }
 
 .radiotxt {
-   margin-left: -50px;
+   margin-left: -7rem;
 }
 
-.radiotxt > input:checked ~ label{
+.product:checked ~ label{
     background-color: #4387DD;
     color: white;
 }
 
-.radiotxt > input:checked ~ div {
-    display: none   ;
+.product:checked ~ div {
+    display: block;
 }
 
 .productDom {
     position: absolute;
     margin-top: 10rem;
+}
+
+.radiotxt > h1 {
+    position: absolute
+}
+
+.product-content {
+    display: none;
+}
+
+.product:checked + .product-content {
+    display: block
+}
+.product-content {
+    width: 300px;
+    height: 300px;
+}
+
+.product-container {
+    display: flex;
 }
