@@ -209,14 +209,22 @@ header {
     display: none;
 }
 
-.product:checked + .product-content {
-    display: block
-}
+
 .product-content {
     width: 300px;
     height: 300px;
 }
 
 .product-container {
+    display: flex;
+}
+
+.product-content > img{
+    width: 100%;
+    height: 335px;
+}
+
+.product:checked + .product-content { /* 체크된 product 바로 뒤의 product-content만 보이게 함 */
+    display: block; 
     display: flex;
 }
