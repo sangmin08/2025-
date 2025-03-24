@@ -213,6 +213,8 @@ header {
 .product-content {
     width: 300px;
     height: 300px;
+    gap: 100px;
+    margin-left: 20rem;
 }
 
 .product-container {
