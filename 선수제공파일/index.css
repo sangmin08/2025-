@@ -45,10 +45,12 @@ header {
     background-color: gray;
     overflow: hidden;
     margin: auto;
-
 }
 
-#visual:hover .slides {
+#visual:hover .slides,
+.slide:hover .slides,
+.arrow:hover .slides
+{
     animation-play-state: paused;
 }
 
@@ -145,10 +147,11 @@ header {
 }
 
 
-.products > h1 {
+.h1 {
     color: #4387DD;
     font-size: 80px;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .circles {
@@ -184,6 +187,12 @@ header {
     cursor: pointer;
 }
 
+#guide {
+    margin-top: 8rem;
+    text-align: center;
+    color: #808080;
+}
+
 .radiotxt {
    margin-left: -7rem;
 }
@@ -203,22 +212,38 @@ header {
 
 
 .product-content {
-    width: 300px;
-    height: 300px;
-    gap: 100px;
+    gap: 200px;
+    margin-top: 4rem;
+    margin-left: 19rem;
 }
 
 .product-container {
     display: flex;
-    margin-top: 10rem;
+    width: 100%;
+    padding-bottom: 100px;
 }
 
-.product-content > img{
+.product-content > div {
+    width: 300px;
+    height: 430px;
+    overflow-x: none;
+    background-color: #D3E7FF;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 40px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.product-content > div > img{
     width: 100%;
-    height: 335px;
+    height: 330px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 .product:checked + .product-content { /* 체크된 product 바로 뒤의 product-content만 보이게 함 */
     display: block; 
     display: flex;
 }
+
