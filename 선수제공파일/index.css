@@ -17,6 +17,7 @@ header {
     position: fixed;
     z-index: 1;
     width: 100%;
+    color: #265592
 }
 
 #logo {
@@ -179,11 +180,11 @@ header {
     margin-left: 4px;
     margin-top: 2px;
     font-weight: bolder;
-    border: 4px solid #4387DD;
+    border: 4px solid #265592;
     line-height: 95px;
     border-radius: 50%;
     font-size: 20px;
-    color: #4387DD;
+    color: #265592;
     cursor: pointer;
 }
 
@@ -195,11 +196,6 @@ header {
 
 .radiotxt {
    margin-left: -7rem;
-}
-
-.productDom {
-    position: absolute;
-    margin-top: 10rem;
 }
 
 .radiotxt > h1 {
@@ -225,13 +221,13 @@ header {
 
 .product-content > div {
     width: 300px;
-    height: 430px;
+    height: 420px;
     overflow-x: none;
     background-color: #D3E7FF;
     border-radius: 30px;
     text-align: center;
-    font-size: 15px;
-    line-height: 40px;
+    font-size: 14px;
+    line-height: 35px;
     box-shadow: 2px 2px 2px gray;
 }
 
@@ -247,3 +243,63 @@ header {
     display: flex;
 }
 
+.notification {
+    width: 1300px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.kan {
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+
+.arrows {
+    display: flex;
+    gap: 18px;
+    font-size: 25px;
+    float: right;
+    color: #4387DD;
+}
+
+.product_en {
+    width: 1300px;
+    margin: auto;
+}
+
+.product_en > h3 {
+    text-align: center;
+    color: #265592;
+    font-size: 30px
+}
+
+.en {
+    height: 150px;
+    background-color: #265592;
+    border-radius: 80px;
+    vertical-align: middle;
+    display: flex;
+    font-size: 30px;
+    color: white
+}
+
+.en > div {
+    width: 1260px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.en > div > .div_en {
+    border-radius: 80px;
+    width: 1300px;
+    height: 125px;
+    background-color: white;
+    color: #265592;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    text-align: center;
+}
