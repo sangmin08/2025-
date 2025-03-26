@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>반응형웹</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 15px;
+            background-color: green;
+            text-align: center;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .main {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .menu, .side {
+            flex: 1;
+        }
+        
+        .content {
+            flex: 4;
+        }
+        .menu a{
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            background-color: rgb(180, 136, 82);
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            margin-bottom: 1px;
+        }
+        
+        .content {
+            padding: 0 10px;
+        } 
+        .content > h2 {
+            margin-top: 0;
+            padding-top: 0;
+        }  
+        footer {
+            padding: 5px;
+            font-size: 15px;
+            text-align: center;
+            background-color: green;
+            color: black;
+        }
+        @media screen and (max-width: 480px) {
+            .main {
+                flex-direction: column;
+            }
+            .content {
+                padding: 0 0;
+            }
+        }
+        @media screen and (min-width: 480px) and (max-width: 760px) {
+            header { color: red;}
+        }
+    </style>
+</head>
+<body>
+    <header>Respinsive web</header>
+    <div class="main">
+        <div class="menu">
+            <a href="#">메뉴1</a>
+            <a href="#">메뉴2</a>
+            <a href="#">메뉴3</a>
+            <a href="#">메뉴4</a>
+            <a href="#">메뉴5</a>
+        </div>
+        <div class="content">
+            <h2>반응형 웹이란 무엇일까?</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, alias qui. Laborum commodi facere tempora inventore id quidem distinctio ipsa nihil eos adipisci veniam consequatur placeat, fugit eligendi voluptatum quod.</p>
+        </div>
+        <div class="side">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore animi ducimus eaque nam a asperiores voluptatibus ea, sit quis quidem eum eveniet non. Iure inventore iste expedita maxime dolor impedit!
+        </div>
+    </div>
+    <footer>&copy; 2024 홍길동 All rights reserved</footer>
+</body>
+</html>

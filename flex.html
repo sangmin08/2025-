@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  color: black;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.flex-1 { flex-direction: row; }
+.flex-2 { flex-direction: row-reverse; }
+.flex-3 { flex-direction: column; }
+.flex-4 { flex-direction: column-reverse; }
+.flex-5 { flex-wrap: wrap; }
+.flex-6 { flex-wrap: nowrap; }
+.flex-7 { justify-content: center; }
+.flex-8 { justify-content: flex-start; }
+.flex-9 { justify-content: flex-end; }
+.flex-10 { justify-content: space-around; }
+.flex-11 { justify-content: space-between; }
+.flex-12 { height: 200px;align-items: center; }
+.flex-13 { height: 200px;align-items: flex-start; }
+.flex-14 { height: 200px;align-items: flex-end; }
+.flex-15 { height: 200px;align-items: stretch; }
+.flex-16 { height: 200px;align-items: baseline; }
+.flex-17 { flex-wrap: wrap;height: 400px;align-content: space-between; }
+.flex-18 { flex-wrap: wrap;height: 400px;align-content: space-around; }
+.flex-19 { flex-wrap: wrap;height: 400px;align-content: stretch; }
+.flex-20 { flex-wrap: wrap;height: 400px;align-content: center; }
+.flex-21 { flex-wrap: wrap;height: 400px;align-content: flex-start; }
+.flex-22 { flex-wrap: wrap;height: 400px;align-content: flex-end; }
+.flex-23 { height: 300px;justify-content: center;align-items: center; }
+.flex-24 { height: 200px; }
+.flex-24 > div:nth-child(1) { align-self: flex-start; }
+.flex-24 > div:nth-child(2) { align-self: center; }
+.flex-24 > div:nth-child(3) { align-self: flex-end; }
+
+</style>
+</head>
+<body>
+<h1>Flexible Boxes</h1>
+
+<p><strong>flex-direction: row;</strong></p>
+<div class="flex-container flex-1">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+</div>
+
+<p><strong>flex-direction: row-reverse;</strong></p>
+<div class="flex-container flex-2">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+</div>
+
+<p><strong>flex-direction: column;</strong></p>
+<div class="flex-container flex-3">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+
+<p><strong>flex-direction: column-reverse;</strong></p>
+<div class="flex-container flex-4">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+</div>
+
+<p><strong>flex-wrap: wrap;</strong></p>
+<div class="flex-container flex-5">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>  
+  <div>12</div>
+  <div>13</div>
+  <div>14</div>  
+  <div>15</div>
+  <div>16</div>
+  <div>17</div>
+  <div>18</div>
+  <div>19</div>
+  <div>20</div>
+</div>
+
+<p><strong>flex-wrap: nowrap;</strong></p>
+<div class="flex-container flex-6">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>  
+  <div>12</div>
+  <div>13</div>
+  <div>14</div>  
+  <div>15</div>
+  <div>16</div>
+  <div>17</div>
+  <div>18</div>
+  <div>19</div>
+  <div>20</div>
+</div>
+
+<p><strong>justify-content: center;</strong></p>
+<div class="flex-container flex-7">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+</div>
+
+<p><strong>justify-content: flex-start;</strong></p>
+<div class="flex-container flex-8">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+</div>
+
+<p><strong>justify-content: flex-end;</strong></p>
+<div class="flex-container flex-9">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+</div>
+
+<p><strong>justify-content: space-around;</strong></p>
+<div class="flex-container flex-10">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+</div>
+
+<p><strong>justify-content: space-between;</strong></p>
+<div class="flex-container flex-11">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+</div>
+
+<p><strong>height: 200px;align-items: center;</strong></p>
+<div class="flex-container flex-12">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+</div>
+
+<p><strong>height: 200px;align-items: flex-start;</strong></p>
+<div class="flex-container flex-13">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+</div>
+
+<p><strong>height: 200px;align-items: flex-end;</strong></p>
+<div class="flex-container flex-14">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+</div>
+
+<p><strong>height: 200px;align-items: stretch;</strong></p>
+<div class="flex-container flex-15">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+</div>
+
+<p><strong>height: 200px;align-items: baseline;</strong></p>
+<div class="flex-container flex-16">
+  <div><h1>1</h1></div>
+  <div><h6>2</h6></div>
+  <div><h3>3</h3></div>  
+  <div><small>4</small></div>
+</div>
+
+<p><strong>flex-wrap: wrap;height: 400px;align-content: space-between;</strong></p>
+<div class="flex-container flex-17">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>  
+  <div>12</div>
+  <div>13</div>
+  <div>14</div>  
+  <div>15</div>
+  <div>16</div>
+  <div>17</div>
+  <div>18</div>
+  <div>19</div>
+  <div>20</div>
+</div>
+
+<p><strong>flex-wrap: wrap;height: 400px;align-content: space-around;</strong></p>
+<div class="flex-container flex-18">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>  
+  <div>12</div>
+  <div>13</div>
+  <div>14</div>  
+  <div>15</div>
+  <div>16</div>
+  <div>17</div>
+  <div>18</div>
+  <div>19</div>
+  <div>20</div>
+</div>
+
+<p><strong>flex-wrap: wrap;height: 400px;align-content: stretch;</strong></p>
+<div class="flex-container flex-19">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>  
+  <div>12</div>
+  <div>13</div>
+  <div>14</div>  
+  <div>15</div>
+  <div>16</div>
+  <div>17</div>
+  <div>18</div>
+  <div>19</div>
+  <div>20</div>
+</div>
+
+<p><strong>flex-wrap: wrap;height: 400px;align-content: center;</strong></p>
+<div class="flex-container flex-20">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>  
+  <div>12</div>
+  <div>13</div>
+  <div>14</div>  
+  <div>15</div>
+  <div>16</div>
+  <div>17</div>
+  <div>18</div>
+  <div>19</div>
+  <div>20</div>
+</div>
+
+<p><strong>flex-wrap: wrap;height: 400px;align-content: flex-start;</strong></p>
+<div class="flex-container flex-21">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>  
+  <div>12</div>
+  <div>13</div>
+  <div>14</div>  
+  <div>15</div>
+  <div>16</div>
+  <div>17</div>
+  <div>18</div>
+  <div>19</div>
+  <div>20</div>
+</div>
+
+<p><strong>flex-wrap: wrap;height: 400px;align-content: flex-end;</strong></p>
+<div class="flex-container flex-22">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>  
+  <div>12</div>
+  <div>13</div>
+  <div>14</div>  
+  <div>15</div>
+  <div>16</div>
+  <div>17</div>
+  <div>18</div>
+  <div>19</div>
+  <div>20</div>
+</div>
+
+<p><strong>Perfect Centering: height: 300px;justify-content: center;align-items: center;</strong></p>
+<div class="flex-container flex-23">
+  <div>1</div>
+</div>
+
+<p><strong>align-self</strong></p>
+<div class="flex-container flex-24">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+</div>
+
+</body>
+</html>
