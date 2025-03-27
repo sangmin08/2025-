@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>서브메뉴 네비게이션</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    nav {
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+    }
+
+    .menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .menu-item {
+        display: inline-block;
+        position: relative;
+        margin-right: 20px;
+    }
+
+    .menu-item a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+    }
+
+    .submenu-container {
+        display: none; /* Initially hidden */
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: #666;
+        padding: 0;
+        margin-top: 10px; /* Adjust spacing from the main menu */
+    }
+
+    .submenu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: inline-block; /* Align submenus horizontally */
+        width: 33%; /* Adjust the width based on menu items count */
+    }
+
+    .submenu li a {
+        color: white;
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+    }
+
+    .submenu li a:hover {
+        background-color: #555;
+    }
+</style>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="menu-item"><a href="#">대메뉴 1</a></li>
+            <li class="menu-item"><a href="#">대메뉴 2</a></li>
+            <li class="menu-item"><a href="#">대메뉴 3</a></li>
+        </ul>
+        <!-- 공통 서브메뉴 영역 -->
+        <div class="submenu-container">
+            <ul class="submenu">
+                <li><a href="#">서브메뉴 1-1</a></li>
+                <li><a href="#">서브메뉴 1-2</a></li>
+                <li><a href="#">서브메뉴 1-3</a></li>
+            </ul>
+            <ul class="submenu">
+                <li><a href="#">서브메뉴 2-1</a></li>
+                <li><a href="#">서브메뉴 2-2</a></li>
+                <li><a href="#">서브메뉴 2-3</a></li>
+            </ul>
+            <ul class="submenu">
+                <li><a href="#">서브메뉴 3-1</a></li>
+                <li><a href="#">서브메뉴 3-2</a></li>
+                <li><a href="#">서브메뉴 3-3</a></li>
+            </ul>
+        </div>
+    </nav>
+<script>
+$(document).ready(function() {
+    $('.menu-item').mouseenter(function() {
+        $('.submenu-container').stop(true, true).slideDown('fast');
+    });
+
+    $('nav').mouseleave(function() {
+        $('.submenu-container').stop(true, true).slideUp('fast');
+    });
+});
+</script>
+</body>
+</html>
