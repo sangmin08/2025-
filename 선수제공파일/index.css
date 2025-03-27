@@ -200,7 +200,7 @@ a {
 
 header {
     position: fixed;
-    z-index: 1;
+    z-index: 4;
 }
 
 .menu {
@@ -212,6 +212,8 @@ header {
     font-size: 0.9rem; /* 폰트 크기 축소 */
     width: 100%;
     padding: 1%;
+    position: relative;
+    z-index: 2;
 }
 
 #logo {
@@ -232,53 +234,64 @@ header {
 }
 
 #slide1 , #slide2 , #slide3 {
-    display: none;
+    display: none;  
 }
 
 /* 기본 스타일 */
-
-#menu {
-    display: flex;
-    justify-content: center;   
-}
-
-#menu ul {
+ul li {
     list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#menu li {
-    position: relative; /* 서브메뉴를 위치시킬 기준 */
-    display: inline-block; /* 메뉴 항목을 가로로 배치 */
 }
 
 .surve {
-    width: 500px;
-    display: none; /* 기본적으로 서브메뉴는 숨겨짐 */
-    position: absolute; /* 서브메뉴의 위치를 메뉴 항목에 상대적으로 설정 */
-    top: 100%; /* 메뉴 항목 바로 아래에 위치 */
-    left: 0;
-    background-color: #fff; /* 서브메뉴 배경색 */
-    border: 1px solid #ccc; /* 서브메뉴 테두리 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 서브메뉴 그림자 */
-    min-width: 200px; /* 서브메뉴의 최소 너비 */
+    display: none;
+    height: 150px;
+    flex-direction: column;
+    background-color: #a2b4cc;
 }
 
-header:hover .surve {
-    display: block; /* 메뉴 항목에 마우스를 올리면 서브메뉴가 보이도록 */
+#menu {
+    font: bold 16px "malgun gothic";
+    width: 700px;
+    height: 50px;
+    color: black;
+    line-height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    
 }
 
-.surve a {
-    display: block; /* 서브메뉴 항목을 세로로 배치 */
-    padding: 10px;
-    text-decoration: none;
-    color: #333; /* 서브메뉴 항목의 텍스트 색 */
+
+#menu>ul>li>ul {
+    width: 130px;
+    display: none;
+    position: absolute;
+    font-size: 14px;
+    background: skyblue;
+
 }
 
-.surve a:hover {
-    background-color: #f0f0f0; /* 서브메뉴 항목에 마우스를 올리면 배경색 변경 */
+header > .menu:hover ~ #menu > ul > li > .surve {
+    display: flex;
+    animation: fadeInDown 1s;
 }
+
+#menu>ul>li>div>a:hover {
+    background: #ffa500;
+    transition: ease 1s;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /*  */
 
 
