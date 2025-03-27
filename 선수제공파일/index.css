@@ -246,7 +246,7 @@ ul li {
     display: none;
     height: 150px;
     flex-direction: column;
-    background-color: #a2b4cc;
+    background: #4387DD;
 }
 
 #menu {
@@ -257,7 +257,6 @@ ul li {
     line-height: 50px;
     margin: 0 auto;
     text-align: center;
-    
 }
 
 
@@ -267,7 +266,6 @@ ul li {
     position: absolute;
     font-size: 14px;
     background: skyblue;
-
 }
 
 header > .menu:hover ~ #menu > ul > li > .surve {
@@ -276,7 +274,7 @@ header > .menu:hover ~ #menu > ul > li > .surve {
 }
 
 #menu>ul>li>div>a:hover {
-    background: #ffa500;
+    background: orange;
     transition: ease 1s;
 }
 
