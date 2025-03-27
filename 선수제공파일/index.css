@@ -462,7 +462,7 @@ header > .menu:hover ~ #menu > ul > li > .surve {
     display: none; /* 기본적으로 숨김 */
     justify-content: center; /* 가로 가운데 정렬 */
     align-items: center; /* 세로 가운데 정렬 */
-    gap: 19%; /* 간격 유지 */
+    gap: 13%; /* 간격 유지 */
     margin: 0; /* 마진 제거 */
 }
 
