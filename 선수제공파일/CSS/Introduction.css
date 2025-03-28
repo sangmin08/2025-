@@ -1,0 +1,251 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #265592;
+}
+
+.container {
+    margin: auto;
+    margin-top: 90px;
+}
+
+
+
+header {
+    position: fixed;
+    z-index: 4;
+    top:0;
+}
+
+.menu {
+    display: flex; /* 가로 정렬 */
+    justify-content: space-between; /* 요소 간 간격 유지 */
+    align-items: center; /* 세로 가운데 정렬 */
+    padding: 10px; /* 패딩 조정 */
+    background-color: #C1D6F6; /* 배경색 유지 */
+    font-size: 0.9rem; /* 폰트 크기 축소 */
+    width: 100%;
+    padding: 1%;
+    position: relative;
+    z-index: 2;
+}
+
+#logo {
+    width: 15%; /* 로고 크기 축소 */
+    height: auto; /* 비율 유지 */
+}
+
+.nav {
+    display: flex; /* 가로 정렬 */
+    gap: 100px; /* 간격 추가 */
+    font-size: 0.85rem; /* 폰트 크기 축소 */
+}
+
+.login {
+    display: flex; /* 가로 정렬 */
+    gap: 40px; /* 간격 추가 */
+    font-size: 0.85rem; /* 폰트 크기 축소 */
+}
+
+ul li {
+    list-style: none;
+}
+
+.surve {
+    display: none;
+    height: 200px;
+    flex-direction: column;
+    background: #C1D6F6;
+}
+
+#menu {
+    font: bold 16px "malgun gothic";
+    width: 700px;
+    height: 50px;
+    color: black;
+    line-height: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+#menu>ul>li>ul {
+    width: 130px;
+    display: none;
+    position: absolute;
+    font-size: 14px;
+    background: skyblue;
+}
+
+header:hover #menu > ul > li > .surve {
+    display: flex;
+    animation: fadeInDown 1s;
+}
+
+#menu>ul>li>div>a:hover {
+    background: orange;
+    transition: ease 1s;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.content_Dom_div {
+    margin-top: 60px;
+    display: flex;
+    gap: 80px;
+}
+
+.content_Dom_div > div {
+    background-color: #C1D6F6;
+    width: 600px;
+    height: 300px;
+    border-radius: 30px;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#container {
+    z-index: 1;
+    margin-top: 10%;
+    width: 1800px;
+    height: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+#background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/나눔혁신.jpg);
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+#background-container.fade-in {
+    opacity: 1;
+}
+#container #split-container {
+    position: absolute;
+    top: 0;
+    left: 0;;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+}
+#container #split-container .split-area {
+    background-size: cover;
+    flex: 1;
+    height: 700px;
+    background-position: center;
+    transition: opacity 0.5s ease-in-out;
+    position: relative;
+}
+#container #split-container .split-area::before {
+    content: "";
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+#container #split-container .split-area-1::before { background-image: url(/B-Module/신뢰혁신.jpg); }
+#container #split-container .split-area-2::before { background-image: url(/B-Module/나눔혁신.jpg); }
+#container #split-container .split-area-3::before { background-image: url(/B-Module/환경혁신.jpg); }
+#container #split-container .split-area-4::before { background-image: url(/B-Module/미래혁신.jpg); }
+#container #split-container .split-area-5::before { background-image: url(/B-Module/보안혁신.jpg); }
+
+#container #split-container .split-area.fade-out::before { opacity: 0; }
+
+#container #split-container .split-area span.title {
+    display: block;
+    position: absolute;
+    left: 30px;
+    bottom: 50px;
+    color: white;
+    font-weight: 600;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+#container #split-container .split-area span.title.hide {
+    display: none;
+}
+#container #split-container .split-area span.arrow {
+    display: block;
+    position: absolute;
+    right: 30px;
+    bottom: 60px;
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    display: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+#container #split-container .split-area span.arrow.show {
+    display: block;
+}
+#container #split-container .split-gap {
+    background-color: white;
+    width: 15px;
+    height: 700px;
+}
+.motos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px 0 20px;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.motos div {
+    display: none;
+}
+.motos div.active {
+    display: block;
+} */

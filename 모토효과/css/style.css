@@ -19,7 +19,7 @@
     height: 700px;
     background-size: cover;
     background-position: center;
-    background-image: url(../img/나눔혁신.jpg);
+    background-image: url(../img/신뢰혁신.jpg);
     z-index: 99;
     opacity: 0; /* 초기 투명도 설정 */
     transition: opacity 0.5s ease-in-out;
@@ -58,11 +58,11 @@
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
-#container #split-container .split-area-1::before { background-image: url(../img/나눔혁신.jpg); }
-#container #split-container .split-area-2::before { background-image: url(../img/미래혁신.jpg); }
-#container #split-container .split-area-3::before { background-image: url(../img/보안혁신.jpg); }
-#container #split-container .split-area-4::before { background-image: url(../img/신뢰혁신.jpg); }
-#container #split-container .split-area-5::before { background-image: url(../img/환경혁신.jpg); }
+#container #split-container .split-area-1::before { background-image: url(../img/신뢰혁신.jpg); }
+#container #split-container .split-area-2::before { background-image: url(../img/나눔혁신.jpg); }
+#container #split-container .split-area-3::before { background-image: url(../img/환경혁신.jpg); }
+#container #split-container .split-area-4::before { background-image: url(../img/미래혁신.jpg); }
+#container #split-container .split-area-5::before { background-image: url(../img/보안혁신.jpg); }
 
 #container #split-container .split-area.fade-out::before { opacity: 0; }
 
