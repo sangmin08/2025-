@@ -128,13 +128,7 @@ header:hover #menu > ul > li > .surve {
     position: a;
 }
 
-.content_Dom_div > div > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 30px;
-    filter: brightness(50%);
-}
+
 
 /* * {
     margin: 0;
