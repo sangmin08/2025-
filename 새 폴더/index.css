@@ -1,0 +1,12 @@
+.container {
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    align-items: center;
+    margin: auto;
+    border-radius: 80px;
+}
+
+.timer {
+    text-align: center;
+}
