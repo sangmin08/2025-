@@ -196,7 +196,7 @@ a {
 
 .container {
     margin: auto;
-    margin-top: 90px;
+    margin-top: 80px;
 }
 
 header {
@@ -276,7 +276,7 @@ header:hover #menu > ul > li > .surve {
 }
 
 #menu>ul>li>div>a:hover {
-    background: orange;
+    background: #F2F2F2;
     transition: ease 1s;
 }
 
@@ -328,6 +328,7 @@ header:hover #menu > ul > li > .surve {
     width: 25%;
     height: 700px;
     background-size: cover;
+    background-position: center;
 }
 
 .slide_text {

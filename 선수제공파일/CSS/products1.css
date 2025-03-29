@@ -1,0 +1,112 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #265592;
+}
+
+.h1 {
+    color: #4387DD;
+    font-size: 5rem;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+
+header {
+    position: fixed;
+    z-index: 4;
+    top: 0;
+}
+
+.menu {
+    display: flex; /* 가로 정렬 */
+    justify-content: space-between; /* 요소 간 간격 유지 */
+    align-items: center; /* 세로 가운데 정렬 */
+    padding: 10px; /* 패딩 조정 */
+    background-color: #C1D6F6; /* 배경색 유지 */
+    font-size: 0.9rem; /* 폰트 크기 축소 */
+    width: 100%;
+    padding: 1%;
+    position: relative;
+    z-index: 2;
+}
+
+#logo {
+    width: 15%; /* 로고 크기 축소 */
+    height: auto; /* 비율 유지 */
+}
+
+.nav {
+    display: flex; /* 가로 정렬 */
+    gap: 100px; /* 간격 추가 */
+    font-size: 0.85rem; /* 폰트 크기 축소 */
+}
+
+.login {
+    display: flex; /* 가로 정렬 */
+    gap: 40px; /* 간격 추가 */
+    font-size: 0.85rem; /* 폰트 크기 축소 */
+}
+
+ul li {
+    list-style: none;
+}
+
+.surve {
+    display: none;
+    height: 200px;
+    flex-direction: column;
+    background: #C1D6F6;
+}
+
+#menu {
+    font: bold 16px "malgun gothic";
+    width: 700px;
+    height: 50px;
+    color: black;
+    line-height: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+#menu>ul>li>ul {
+    width: 130px;
+    display: none;
+    position: absolute;
+    font-size: 14px;
+    background: skyblue;
+}
+
+header:hover #menu > ul > li > .surve {
+    display: flex;
+    animation: fadeInDown 1s;
+}
+
+#menu>ul>li>div>a:hover {
+    background: #F2F2F2;
+    transition: ease 1s;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    margin: auto;
+    margin-top: 90px;
+}
+
