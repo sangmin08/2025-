@@ -9,85 +9,84 @@ a {
     color: #265592;
 }
 
-/* <-----------------------------------반응형 페이지-----------------------------------> */
 @media screen and (max-width: 480px) {
     header {
-        align-items: center; /* 가운데 정렬 */
-        padding: 15px; /* 패딩 조정 */
-        gap: 15px; /* 요소 간 간격 추가 */
-        width: 480px; /* 너비 100% */
+        align-items: center;
+        padding: 15px;
+        gap: 15px;
+        width: 480px;
     }
 
     #logo {
-        width: 150px; /* 로고 크기 축소 */
-        height: auto; /* 비율 유지 */
+        width: 150px;
+        height: auto;
     }
 
     .nav {
-        justify-content: center; /* 가로 가운데 정렬 */
-        gap: 10px; /* 간격 조정 */
-        text-align: center; /* 텍스트 가운데 정렬 */
+        justify-content: center;
+        gap: 10px; 
+        text-align: center;
     }
 
     .login {
-        gap: 15px; /* 간격 추가 */
+        gap: 15px; 
     }
 
     #visual {
-        width: 480px; /* 너비 100% */
-        height: 350px; /* 비주얼 섹션 높이 축소 */
+        width: 480px;
+        height: 350px;
     }
 
     .slide_text {
-        margin-left: 10px; /* 텍스트 위치 조정 */
+        margin-left: 10px;
         margin-top: 80px;
-        font-size: 1rem; /* 텍스트 크기 축소 */
-        text-align: center; /* 텍스트 가운데 정렬 */
+        font-size: 1rem;
+        text-align: center;
     }
 
     .circles {
-        flex-direction: row; /* 원형 섹션을 가로 정렬 */
-        flex-wrap: wrap; /* 요소가 화면을 넘어가면 줄바꿈 */
-        justify-content: center; /* 가로 가운데 정렬 */
-        align-items: center; /* 세로 가운데 정렬 */
-        gap: 10px; /* 간격 조정 */
-        width: 100%; /* 부모 요소 너비에 맞춤 */
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
     }
 
     .product-content {
-        flex-direction: column; /* 제품 콘텐츠를 세로 정렬 */
+        flex-direction: column;
         margin-left: 0;
-        gap: 15px; /* 간격 추가 */
-        align-items: center; /* 가운데 정렬 */
+        gap: 15px;
+        align-items: center;
     }
 
     .banners {
-        flex-direction: column; /* 배너를 세로 정렬 */
-        gap: 15px; /* 간격 추가 */
-        align-items: center; /* 가운데 정렬 */
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
     }
 
     .footer_top, .footer_bottom {
-        flex-direction: column; /* 푸터를 세로 정렬 */
-        align-items: center; /* 가운데 정렬 */
-        gap: 15px; /* 간격 추가 */
-        text-align: center; /* 텍스트 가운데 정렬 */
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
     }
 
     body {
-        font-size: 0.85rem; /* 기본 글자 크기 축소 */
+        font-size: 0.85rem;
     }
 
     h1, .h1 {
-        font-size: 1rem; /* 큰 제목 글자 크기 축소 */
+        font-size: 1rem;
     }
 
     h2 {
-        font-size: 1.8rem; /* 중간 제목 글자 크기 축소 */
+        font-size: 1.8rem;
     }
 
     p, .slide_text {
-        font-size: 0.75rem; /* 본문 글자 크기 축소 */
+        font-size: 0.75rem;
     }
 
     h1, .slide_text {
@@ -95,16 +94,16 @@ a {
     }
 
     .button {
-        font-size: 3.5rem; /* 버튼 글자 크기 축소 */
+        font-size: 3.5rem; 
     }
 
     .product-content > div {
-        width: 90%; /* 제품 콘텐츠 너비 조정 */
-        height: auto; /* 높이 자동 조정 */
+        width: 90%; 
+        height: auto; 
     }
 
     .product-content > div > img {
-        height: auto; /* 이미지 비율 유지 */
+        height: auto;
     }
 }
 
@@ -135,7 +134,6 @@ a {
     }
 }
 
-/* HTML: <div class="loader"></div> */
 .loader {
     width: 40px;
     height: 20px;
@@ -190,10 +188,6 @@ a {
     90%         {transform:translate(26px)}
   }
 
-/* HTML: <div class="loader"></div> */
-
-/* HTML: <div class="loader"></div> */
-
 .container {
     margin: auto;
     margin-top: 80px;
@@ -206,12 +200,12 @@ header {
 }
 
 .menu {
-    display: flex; /* 가로 정렬 */
-    justify-content: space-between; /* 요소 간 간격 유지 */
-    align-items: center; /* 세로 가운데 정렬 */
-    padding: 10px; /* 패딩 조정 */
-    background-color: #C1D6F6; /* 배경색 유지 */
-    font-size: 0.9rem; /* 폰트 크기 축소 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #C1D6F6;
+    font-size: 0.9rem;
     width: 100%;
     padding: 1%;
     position: relative;
@@ -219,27 +213,26 @@ header {
 }
 
 #logo {
-    width: 15%; /* 로고 크기 축소 */
-    height: auto; /* 비율 유지 */
+    width: 15%;
+    height: auto;
 }
 
 .nav {
-    display: flex; /* 가로 정렬 */
-    gap: 100px; /* 간격 추가 */
-    font-size: 0.85rem; /* 폰트 크기 축소 */
+    display: flex;
+    gap: 100px;
+    font-size: 0.85rem;
 }
 
 .login {
-    display: flex; /* 가로 정렬 */
-    gap: 40px; /* 간격 추가 */
-    font-size: 0.85rem; /* 폰트 크기 축소 */
+    display: flex;
+    gap: 40px;
+    font-size: 0.85rem;
 }
 
 #slide1 , #slide2 , #slide3 {
     display: none;  
 }
 
-/* 기본 스타일 */
 ul li {
     list-style: none;
 }
@@ -260,7 +253,6 @@ ul li {
     margin: 0 auto;
     text-align: center;
 }
-
 
 #menu>ul>li>ul {
     width: 130px;
@@ -291,9 +283,6 @@ header:hover #menu > ul > li > .surve {
         transform: translateY(0);
     }
 }
-
-/*  */
-
 
 #visual {
     position: relative;
@@ -385,7 +374,6 @@ header:hover #menu > ul > li > .surve {
     display: none;
     color: white;
     margin-top: 17%;
-
 }
 
 .button label {
@@ -416,11 +404,12 @@ header:hover #menu > ul > li > .surve {
 }
 
 .circles {
-    width: 70%;
+    width: 90%;
     display: flex;
     text-align: center;
-    justify-content: center; /* 가로 가운데 정렬 */
-    margin: auto; /* 부모 요소 기준 가운데 정렬 */
+    justify-content: center;
+    margin: auto;
+    justify-content: space-around; /* 요소 간 간격 유지 */
 }
 
 .product {
@@ -462,11 +451,11 @@ header:hover #menu > ul > li > .surve {
 }
 
 .product-content {
-    display: none; /* 기본적으로 숨김 */
-    justify-content: center; /* 가로 가운데 정렬 */
-    align-items: center; /* 세로 가운데 정렬 */
-    gap: 13%; /* 간격 유지 */
-    margin: 0; /* 마진 제거 */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 13%;
+    margin: 0;
 }
 
 .product-container {
@@ -492,12 +481,12 @@ header:hover #menu > ul > li > .surve {
     border-top-right-radius: 30px;
 }
 
-.product:checked + .product-content { /* 체크된 product 바로 뒤의 product-content만 보이게 함 */
+.product:checked + .product-content {
     display: flex;
 }
 
 .notification {
-    width: 70%;
+    width: 90%;
     margin: auto;
     margin-bottom: 100px;
 }
@@ -521,13 +510,13 @@ header:hover #menu > ul > li > .surve {
     font-size: 1.56rem;
     float: right;
     color: #4387DD;
-    position: static; /* 위치 초기화 */
-    margin-top: 0; /* 여백 초기화 */
-    transform: none; /* 변환 초기화 */
+    position: static;
+    margin-top: 0;
+    transform: none;
 }
 
 .product_en {
-    width: 70%;
+    width: 90%;
     margin: auto;
 }
 

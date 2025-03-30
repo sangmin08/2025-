@@ -107,13 +107,14 @@ header:hover #menu > ul > li > .surve {
 
 .container {
     margin: auto;
-    margin-top: 90px;
-    width: 70%;
+    margin-top: 10%;
+    width: 90%;
 }
 
 #video-container {
     position: relative;
     width: 100%;
+    margin-bottom: 60px;
     
   }
   #video-element {
@@ -134,7 +135,7 @@ header:hover #menu > ul > li > .surve {
     padding: 10px;
     border-radius: 5px;
   }
-  #controls button {
+  #controls button { 
     padding: 5px 10px;
     font-size: 14px;
     cursor: pointer;
@@ -146,3 +147,146 @@ header:hover #menu > ul > li > .surve {
   #controls button:hover {
     background-color: #ddd;
   }
+
+  .contents {
+    margin-bottom: 50px;
+}
+
+.h1 {
+    color: #4387DD;
+    font-size: 5rem;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.circles {
+    width: 90%;
+    display: flex;
+    text-align: center;
+    justify-content: center; /* 가로 가운데 정렬 */
+    margin: auto; /* 부모 요소 기준 가운데 정렬 */
+    justify-content: space-around; /* 요소 간 간격 유지 */
+}
+
+.product {
+    width: 100px;
+    height: 100px;
+}
+
+.radiotxt > input {
+    position: absolute;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.radiotxt > label { 
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-left: 4px;
+    margin-top: 2px;
+    font-weight: bolder;
+    border: 4px solid #265592;
+    line-height: 95px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: #265592;
+    cursor: pointer;
+}
+
+#guide {
+    margin-top : 128px;
+    text-align: center;
+    color: #808080;
+}
+
+.radiotxt {
+   margin-left: -112px;
+}
+
+.product-content {
+    display: none; /* 기본적으로 숨김 */
+    justify-content: center; /* 가로 가운데 정렬 */
+    align-items: center; /* 세로 가운데 정렬 */
+    gap: 3%; /* 간격 유지 */
+    margin: 0; /* 마진 제거 */
+}
+
+.product-container {
+    width: 100%;
+    padding-bottom: 100px;
+}
+
+.product-content > div {
+    width: 270px;
+    height: 360px;
+    background-color: #D3E7FF;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 0.80rem;
+    line-height: 35px;
+    box-shadow: 2px 2px 2px gray;
+}
+
+#price {
+    font-size: 1.3rem;
+}
+
+.product-content > div > img{
+    width: 100%;
+    height: 260px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.product:checked + .product-content { /* 체크된 product 바로 뒤의 product-content만 보이게 함 */
+    display: flex;
+}
+
+.footer_top {
+    background-color: #F5F5F5;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_bottom {
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_bottom > div,
+.footer_top > div
+{
+    padding: 20px;   
+}
+
+.footer_logo {
+    margin-top: 32px;
+}
+
+.sns_icon > img {
+    width: 40px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#youtube:hover {
+    content: url(/공통/images/youtube.png);
+}
+#pinterest:hover {
+    content: url(/공통/images/pinterest.png);
+}
+#kakaotalk:hover {
+    content: url(/공통/images/twitter.png);
+}
+#facebook:hover {
+    content: url(/공통/images/facebook.png);
+}
+#instagram:hover {
+    content: url(/공통/images/instagram.png);
+}
