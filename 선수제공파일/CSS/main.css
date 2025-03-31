@@ -118,7 +118,7 @@ a {
     justify-content: center;
     align-items: center;
     z-index: 10;
-    animation: fadeOut 4s ease-out forwards;
+    animation: fadeOut 0.1s ease-out forwards;
 }
 
 @keyframes fadeOut {
@@ -466,12 +466,21 @@ header:hover #menu > ul > li > .surve {
 .product-content > div {
     width: 300px;
     height: 420px;
-    background-color: #D3E7FF;
+    background-color: #4387DD;
     border-radius: 30px;
     text-align: center;
     font-size: 0.88rem;
     line-height: 35px;
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 2px 2px 2px #265592;
+    color: white;
+}
+
+#sale {
+    position: absolute;
+    width: 70px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
 }
 
 .product-content > div > img{
