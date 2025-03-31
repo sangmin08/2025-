@@ -229,7 +229,7 @@ header:hover #menu > ul > li > .surve {
     text-align: center;
     font-size: 0.80rem;
     line-height: 35px;
-    box-shadow: 2px 2px 2px #265592;
+    box-shadow: 0px 0px 10px #265592;
 }
 
 #price {
@@ -239,9 +239,10 @@ header:hover #menu > ul > li > .surve {
 #sale {
     position: absolute;
     width: 70px;    
-    border-radius: 20px;
+    border-radius: 30px;
     color: white;
     font-weight: bold;
+    margin: 10px;
 }
 
 .buy { 

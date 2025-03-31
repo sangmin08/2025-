@@ -135,13 +135,14 @@ header:hover #menu > ul > li > .surve {
 
 .product-content > div {
     width: 270px;
-    height: 360px;
-    background-color: #D3E7FF;
+    height: 432px;
+    background-color: #4387DD;
+    color: white;
     border-radius: 30px;
     text-align: center;
     font-size: 0.80rem;
     line-height: 35px;
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 2px 2px 2px #265592;
 }
 
 #price {
@@ -151,9 +152,25 @@ header:hover #menu > ul > li > .surve {
 #sale {
     position: absolute;
     width: 70px;
-    border-radius: 20px;
+    border-radius: 30px;
     color: white;
     font-weight: bold;
+    margin: 10px;
+}
+
+.buy { 
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: solid 5px #265592;
+    font-weight: bold;
+    background-color: #265592;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.buy > p {
+    background-color: white;
+    color: #265592;
 }
 
 .product-content > div > img{
