@@ -271,6 +271,150 @@ header:hover #menu > ul > li > .surve {
     display: flex;
 }
 
+
+.order-btn {
+    display: block;
+    margin: 30px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+/* 모달 오버레이 스타일 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  .modal {
+    background: #fff;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90%;
+    overflow-y: auto;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+  }
+  .modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .modal-header img {
+    width: 150px;
+    vertical-align: middle;
+  }
+  /* 모달 내 영역 구분 */
+  .modal-section {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  .section-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  /* 회원정보영역 */
+  .member-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  /* 전시영역 */
+  .display-area {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .display-category {
+    width: 100%;
+  }
+  .display-category h4 {
+    margin: 10px 0 5px;
+  }
+  .display-products {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .display-product {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+    width: 120px;
+    cursor: grab;
+  }
+  .display-product.selected {
+    opacity: 0.4;
+  }
+  .display-product img {
+    width: 100%;
+    height: auto;
+  }
+  /* 주문영역 */
+  .order-area {
+    min-height: 150px;
+    border: 2px dashed #aaa;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .order-area table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .order-area th, .order-area td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+  }
+  .order-area input[type="number"] {
+    width: 60px;
+  }
+  /* 결제영역 */
+  .payment-area {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  /* 취소영역 (모달 내 빈 공간에 드랍시 취소 처리) */
+  .cancel-drop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    /* 시각적 단서로 배경색을 조금 부여 */
+    background: rgba(255,0,0,0.1);
+  }
+  /* 주문하기 버튼 */
+  .order-submit {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  /* 주문완료 메시지 */
+  .order-message {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1100;
+  }
+
 .footer_top {
     background-color: #F5F5F5;
     width: 100%;
