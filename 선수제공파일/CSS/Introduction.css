@@ -123,39 +123,36 @@ header:hover #menu > ul > li > .surve {
     margin-top: 60px;
     display: flex;
     gap: 80px;
-}
-
-.content_Dom_div > div {
-    background-color: #C1D6F6;
-    width: 100%;
-    height: 450px;
+    box-shadow: 0 0 5px black;
     border-radius: 30px;
 }
 
-#Domimg_1 {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/공통/images/02.jpg);
-}
-#Domimg_2 {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/공통/images/28.jpg);
-}
-#Domimg_3 {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/공통/images/05.jpg);
-}
-#Domimg_4 {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/공통/images/07.jpg);
+.content_Dom_div > div {
+    color: black;
+    display: flex;
+    width: 100%;
+    height: 300px;
+    gap: 20px;
+
 }
 
-.Domimg {
-    background-size: cover;
-    background-position: center;
-    color: white;
+.Dom_img > img {
+    width:600px;
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 
-.Domimg > p {
-    font-size: 22px;
-    font-weight: bold;
-    padding: 20px;
-    align-items: center;
+.Dom_p > b {
+    font-size: 30px;
+}
+
+.Dom_p > p {
+    font-size: 17px;
+    color: gray;
+    margin-top: 30px;
+    line-height: 40px;
 }
 
 #container {
@@ -230,7 +227,7 @@ header:hover #menu > ul > li > .surve {
     bottom: 50px;
     color: white;
     font-weight: 600;
-    font-size: 40px;
+    font-size: 38px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 #container #split-container .split-area span.title.hide {

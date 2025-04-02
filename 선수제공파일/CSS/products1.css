@@ -215,11 +215,6 @@ header:hover #menu > ul > li > .surve {
     margin: 0; /* 마진 제거 */
 }
 
-.product-container {
-    width: 100%;
-    padding-bottom: 100px;
-}
-
 .product-content > div {
     width: 270px;
     height: 432px;
@@ -238,14 +233,14 @@ header:hover #menu > ul > li > .surve {
 
 #sale {
     position: absolute;
-    width: 70px;    
+    width: 70px;
     border-radius: 30px;
     color: white;
     font-weight: bold;
     margin: 10px;
 }
 
-.buy { 
+.buy {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     border: solid 5px #265592;
