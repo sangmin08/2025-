@@ -112,7 +112,7 @@ header:hover #menu > ul > li > .surve {
 }
 
 .content {
-    width: 70%;
+    width: 90%;
     display: flex;
     justify-content: center;
     margin: auto;
@@ -120,6 +120,7 @@ header:hover #menu > ul > li > .surve {
 }
 
 .content_Dom_div {
+    margin: 0;
     margin-top: 60px;
     display: flex;
     gap: 80px;
@@ -144,12 +145,16 @@ header:hover #menu > ul > li > .surve {
     border-bottom-left-radius: 30px;
 }
 
+.Dom_p {
+    margin-top: 45px;
+}
+
 .Dom_p > b {
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .Dom_p > p {
-    font-size: 17px;
+    font-size: 30px;
     color: gray;
     margin-top: 30px;
     line-height: 40px;
@@ -158,7 +163,7 @@ header:hover #menu > ul > li > .surve {
 #container {
     z-index: 1;
     margin-top: 10%;
-    width: 70%;
+    width: 90%;
     height: 700px;
     margin: 0 auto;
     position : relative;
@@ -227,7 +232,7 @@ header:hover #menu > ul > li > .surve {
     bottom: 50px;
     color: white;
     font-weight: 600;
-    font-size: 38px;
+    font-size: 50px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 #container #split-container .split-area span.title.hide {
