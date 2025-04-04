@@ -27,6 +27,8 @@ header {
     position: fixed;
     z-index: 4;
     top:0;
+    height: 90px;
+    box-shadow: 0px 1px 5px black;
 }
 
 .menu {
@@ -51,6 +53,10 @@ header {
     display: flex; /* 가로 정렬 */
     gap: 100px; /* 간격 추가 */
     font-size: 0.85rem; /* 폰트 크기 축소 */
+}
+
+.nav > h1:hover {
+    background-color: yellow;
 }
 
 .login {
@@ -92,10 +98,11 @@ ul li {
 header:hover #menu > ul > li > .surve {
     display: flex;
     animation: fadeInDown 1s;
+    box-shadow: 0px 1px 5px black;
 }
 
 #menu>ul>li>div>a:hover {
-    background: #F2F2F2;
+    background: yellow;
     transition: ease 1s;
 }
 
