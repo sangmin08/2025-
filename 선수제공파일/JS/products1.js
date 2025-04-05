@@ -70,19 +70,55 @@ document.getElementById('toggleAutoplay').addEventListener('click', (e) => {
     // 샘플 상품 데이터 (카테고리별)
     const productsData = [
       {
-        category: '전자제품',
+        category: '건강식품',
         items: [
-          { id: 'p1', name: '스마트폰', price: 300000, image: 'https://via.placeholder.com/100?text=스마트폰' },
-          { id: 'p2', name: '노트북', price: 1500000, image: 'https://via.placeholder.com/100?text=노트북' }
+          { id: 'p1', name: '이뮨 멀티비타민&미네랄', price: 65000, image: '/A-Module/images/건강식품/1.PNG' },
+          { id: 'p2', name: '센트룸', price: 27000, image: '/A-Module/images/건강식품/2.PNG' },
+          { id: 'p3', name: '닥터브라이언', price: 2000, image: '/A-Module/images/건강식품/3.PNG' },
+          { id: 'p4', name: '액티브 멀티포맨', price: 30000, image: '/A-Module/images/건강식품/4.PNG' },
+          { id: 'p5', name: '네이처메이드B12', price: 30000, image: '/A-Module/images/건강식품/5.PNG' }
         ]
       },
       {
-        category: '의류',
+        category: '디지털',
         items: [
-          { id: 'p3', name: '티셔츠', price: 20000, image: 'https://via.placeholder.com/100?text=티셔츠' },
-          { id: 'p4', name: '청바지', price: 50000, image: 'https://via.placeholder.com/100?text=청바지' }
+          { id: 'p6', name: 'PANTONE PD충전 보조배터리', price: 24400, image: '/A-Module/images/디지털/1.PNG' },
+          { id: 'p7', name: 'Bowie D05 무선 블루투스 5.3 헤드셋', price: 36900, image: '/A-Module/images/디지털/2.PNG' },
+          { id: 'p8', name: '독거미 F99 기계식 키보드', price: 70750, image: '/A-Module/images/디지털/3.PNG' },
+          { id: 'p9', name: '파이널마우스 스타라이트12 페가수스 미디엄', price: 1128600, image: '/A-Module/images/디지털/4.jpg' },
+          { id: 'p10', name: '보이저5200 블루투스 이어폰', price: 146000, image: '/A-Module/images/디지털/5.PNG' }
         ]
-      }
+      },
+      {
+        category: '팬시',
+        items: [
+          { id: 'p11', name: '명품 자동 장우산', price: 31600, image: '/A-Module/images/팬시/1.PNG' },
+          { id: 'p12', name: '14K 윙블링 원터치 링 귀걸이(주문제작)', price: 250000, image: '/A-Module/images/팬시/2.PNG' },
+          { id: 'p13', name: '14K 윙블링 메르시 목걸이(주문제작)', price: 265000, image: '/A-Module/images/팬시/3.PNG' },
+          { id: 'p14', name: '게이밍 이어폰 VJJB NI', price: 28900, image: '/A-Module/images/팬시/4.PNG' },
+          { id: 'p15', name: '인스탁스 미니 에보', price: 320000, image: '/A-Module/images/팬시/5.PNG' }
+        ]
+      },
+      {
+        category: '향수',
+        items: [
+          { id: 'p16', name: '에스쁘아 솔리드 퍼퓸', price: 26000, image: '/A-Module/images/향수/1.PNG' },
+          { id: 'p17', name: '호텔도슨 향수 오드퍼퓸', price: 153000, image: '/A-Module/images/향수/2.PNG' },
+          { id: 'p18', name: '랑방 레 플레르 EDT', price: 64500, image: '/A-Module/images/향수/3.PNG' },
+          { id: 'p19', name: '몽블랑 익스플로러 EDP', price: 93000, image: '/A-Module/images/향수/4.PNG' },
+          { id: 'p20', name: '캘빈클라인 One EDT', price: 58900, image: '/A-Module/images/향수/5.PNG' }
+        ]
+      },
+      {
+        category: '헤어케어',
+        items: [
+          { id: 'p21', name: '어노브 딥 데미지 트리트먼트 EX 더블', price: 29800, image: '/A-Module/images/헤어케어/1.PNG' },
+          { id: 'p22', name: '려 루트젠 여성맞춤 볼륨 탈모증상케어 샴퓨', price: 21900, image: '/A-Module/images/헤어케어/2.PNG' },
+          { id: 'p23', name: '라보에이치 두피쿨링&노세범 샴푸', price: 19800, image: '/A-Module/images/헤어케어/3.PNG' },
+          { id: 'p24', name: '모로칸오일 헤어트리트먼트', price: 52200, image: '/A-Module/images/헤어케어/4.PNG' },
+          { id: 'p25', name: '닥터포헤어 피토프레시 헤어쿨링 스프레이', price: 14400, image: '/A-Module/images/헤어케어/5.PNG' }
+        ]
+      },
     ];
 
     const nonMemberOrderBtn = document.getElementById('nonMemberOrderBtn');

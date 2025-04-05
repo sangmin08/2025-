@@ -391,7 +391,7 @@ header:hover #menu > ul > li > .surve {
     top: 0;
     right: 0;
     width: 100px;
-    height: 100%;
+    height: 175%;
     /* 시각적 단서로 배경색을 조금 부여 */
     background: rgba(255,0,0,0.1);
   }
